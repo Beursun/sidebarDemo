@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		        body {
+		            background: #eee;
+		        }
+		
+		        ul, li {
+		            margin: 0;
+		            padding: 0;
+		        }
+		
+		        .sidenav {
+		            position: relative;
+		        }
+		
+		            .sidenav > ul {
+		                background: #fff;
+		                position: fixed;
+		                top: 300px;
+		                right: 0px;
+		                width: 60px;
+		            }
+		
+		                .sidenav > ul > li {
+		                    list-style: none;
+		                    width: 58px;
+		                }
+		
+		
+		                    .sidenav > ul > li > a {
+		                        display: block;
+		                        width: 28px;
+		                        height: 38px;
+		                        font-size: 14px;
+		                        padding: 10px 16px;
+		                        position: relative;
+		                    }
+		
+		                        .sidenav > ul > li > a::after {
+		                            position: absolute;
+		                            width: 40px;
+		                            height: 1px;
+		                            bottom: 1px;
+		                            left: 50%;
+		                            margin-left: -20px;
+		                            content: "";
+		                            background: linear-gradient(270deg, white, rgb(238, 238, 238), rgb(238, 238, 238), white);;
+		                            z-index: 1;
+		                        }
+		
+		                        .sidenav > ul > li > a > .bg {
+		                            position: absolute;                           
+		                            top: -1px;
+		                            bottom: 1px;
+		                            left: 0;
+		                            right: 0;
+		                            background: transparent;
+		                            z-index: 2;
+		                        }
+
+		                    .sidenav > ul > li > a >img {
+		                    display:block;
+		                    width:30px;
+		                    height:30px;
+		                    margin:0 auto;
+		                    position:relative;
+		                    z-index:3;
+		                    }
+		                    .sidenav > ul > li > a > span:last-child {
+		                       position:relative;
+		                       z-index:3;
+		                    }
+							
+							.sidenav > ul > li > a .bg:hover{
+							    background:  #e98f36;
+							}
+							
+							#goTop:hover{
+							    background: #e98f36;
+							}
+							
+		    </style>
+
+	</head>
+	<body>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<div class="sidenav">
+		        <ul>
+					<li><a><span class="bg"></span><img src="images/QQ.png" /></a></li>
+		            <li><a><span class="bg"></span><img src="images/phone.png" /></a></li>
+		            <li><a><span class="bg"></span><img src="images/email.png" /></a></li>
+		            <li><a id="goTop" class="bg" style="display:none"><img src="images/2top.png"></a></li>
+		        </ul>
+		    </div>
+
+	</body>
+	<script src="js/jquery.js"></script>
+	<script>
+		(function() {
+		
+		    // 返回顶部按钮自动隐藏
+		    $(window).scroll(function(){
+		        if ($(window).scrollTop()>200){
+		            $('#goTop').fadeIn();
+		        }else if($(window).scrollTop()<200){
+		            $('#goTop').fadeOut();
+		        }
+		    });
+		
+		    $('#goTop').click(function() {
+		        $("html, body").animate({scrollTop:0}, 200);
+		    });
+		})();
+	</script>
+</html>
